@@ -1,0 +1,306 @@
+[
+  {
+    "id": "f001",
+    "query": "What was Apple's total net sales in fiscal 2024?",
+    "ideal_context": [
+      "Apple's total net sales were $391.035 billion in fiscal 2024."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f002",
+    "query": "How much net sales did Apple's Services segment generate in fiscal 2024?",
+    "ideal_context": [
+      "Apple's Services segment generated $96.169 billion in net sales in fiscal 2024."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f003",
+    "query": "What were Apple's iPhone net sales in fiscal 2024?",
+    "ideal_context": [
+      "Apple's iPhone net sales were $201.183 billion in fiscal 2024."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f004",
+    "query": "How did Apple's total net sales in 2024 compare with 2023?",
+    "ideal_context": [
+      "Apple's total net sales increased by 2%, from $383.285 billion in fiscal 2023 to $391.035 billion in fiscal 2024."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f005",
+    "query": "What were Apple's Mac net sales in fiscal 2024?",
+    "ideal_context": [
+      "Apple's Mac net sales were $29.984 billion in fiscal 2024."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f006",
+    "query": "What were Apple's iPad net sales in fiscal 2024?",
+    "ideal_context": [
+      "Apple's iPad net sales were $26.694 billion in fiscal 2024."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f007",
+    "query": "How much net sales did Wearables, Home and Accessories generate in 2024?",
+    "ideal_context": [
+      "Apple's Wearables, Home and Accessories category generated $37.005 billion in net sales in fiscal 2024."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f008",
+    "query": "Which product or service category had the highest net sales in 2024?",
+    "ideal_context": [
+      "Among Apple's listed product and service categories, iPhone had the highest net sales in fiscal 2024, at $201.183 billion. Services generated $96.169 billion."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f009",
+    "query": "By what percentage did Services net sales grow in 2024 compared with 2023?",
+    "ideal_context": [
+      "Apple's Services net sales increased by 13%, from $85.200 billion in fiscal 2023 to $96.169 billion in fiscal 2024."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f010",
+    "query": "What were Apple's total net sales in fiscal 2023 and fiscal 2022?",
+    "ideal_context": [
+      "Apple's total net sales were $383.285 billion in fiscal 2023 and $394.328 billion in fiscal 2022."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f011",
+    "query": "Which geographic segment generated the most net sales in fiscal 2024, and how much?",
+    "ideal_context": [
+      "The Americas was Apple's highest-revenue geographic segment in fiscal 2024, generating $167.045 billion in net sales."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f012",
+    "query": "What were Apple's net sales in Europe in fiscal 2024?",
+    "ideal_context": [
+      "Apple's Europe geographic segment generated $101.328 billion in net sales in fiscal 2024."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f013",
+    "query": "What were Apple's net sales in Greater China in fiscal 2024?",
+    "ideal_context": [
+      "Apple's Greater China geographic segment generated $66.952 billion in net sales in fiscal 2024."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f014",
+    "query": "How did Greater China net sales change in 2024 compared with 2023, and why?",
+    "ideal_context": [
+      "Greater China net sales decreased by 8%, from $72.559 billion in fiscal 2023 to $66.952 billion in fiscal 2024. Apple attributed the decline primarily to lower iPhone and iPad net sales and an unfavorable currency impact from the renminbi's weakness against the U.S. dollar."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f015",
+    "query": "What were Apple's net sales in Japan in fiscal 2024?",
+    "ideal_context": [
+      "Apple's Japan geographic segment generated $25.052 billion in net sales in fiscal 2024."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f016",
+    "query": "What were Apple's net sales in Rest of Asia Pacific in fiscal 2024?",
+    "ideal_context": [
+      "Apple's Rest of Asia Pacific geographic segment generated $30.658 billion in net sales in fiscal 2024."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f017",
+    "query": "How much net sales did Apple report from the United States in 2024?",
+    "ideal_context": [
+      "Apple reported $142.196 billion in net sales from the United States in fiscal 2024."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f018",
+    "query": "What was Apple's total gross margin in fiscal 2024?",
+    "ideal_context": [
+      "Apple's total gross margin amounted to $180.683 billion in fiscal 2024."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f019",
+    "query": "What was Apple's total gross margin percentage in fiscal 2024?",
+    "ideal_context": [
+      "Apple's total gross margin percentage was 46.2% in fiscal 2024."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f020",
+    "query": "What was the gross margin percentage for Apple's Services segment in fiscal 2024?",
+    "ideal_context": [
+      "Apple's Services segment had a gross margin percentage of 73.9% in fiscal 2024."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f021",
+    "query": "How much did Apple spend on research and development in fiscal 2024?",
+    "ideal_context": [
+      "Apple's research and development expense was $31.370 billion in fiscal 2024."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f022",
+    "query": "What were Apple's total operating expenses in fiscal 2024?",
+    "ideal_context": [
+      "Apple's total operating expenses were $57.467 billion in fiscal 2024."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f023",
+    "query": "What was Apple's provision for income taxes in fiscal 2024?",
+    "ideal_context": [
+      "Apple's provision for income taxes was $29.749 billion in fiscal 2024."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f024",
+    "query": "What was Apple's effective tax rate in fiscal 2024?",
+    "ideal_context": [
+      "Apple's effective tax rate was 24.1% in fiscal 2024."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f025",
+    "query": "Why was Apple's effective tax rate in 2024 higher than the 21% statutory federal rate?",
+    "ideal_context": [
+      "Apple's effective tax rate was 24.1%, compared with the 21% statutory federal income tax rate. The higher rate was primarily attributable to a one-time net income tax charge of $10.2 billion related to the European Commission State Aid Decision and state income taxes. These effects were partially offset by a lower effective tax rate on foreign earnings, the U.S. federal research and development credit, and tax benefits from share-based compensation."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f026",
+    "query": "How much did Apple spend repurchasing its common stock in fiscal 2024?",
+    "ideal_context": [
+      "Apple repurchased $95.0 billion of its common stock in fiscal 2024."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f027",
+    "query": "How many shares of common stock did Apple repurchase in fiscal 2024?",
+    "ideal_context": [
+      "Apple repurchased approximately 499 million shares of common stock in fiscal 2024. The detailed table reports 499.372 million shares."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f028",
+    "query": "How much did Apple pay in dividends and dividend equivalents during fiscal 2024?",
+    "ideal_context": [
+      "Apple paid $15.2 billion in dividends and dividend equivalents during fiscal 2024."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f029",
+    "query": "What was Apple's quarterly cash dividend per share as of September 28, 2024?",
+    "ideal_context": [
+      "Apple's quarterly cash dividend was $0.25 per share as of September 28, 2024."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f030",
+    "query": "What were Apple's cash, cash equivalents and marketable securities at the end of fiscal 2024?",
+    "ideal_context": [
+      "Apple reported that unrestricted cash, cash equivalents and marketable securities totaled $140.8 billion as of September 28, 2024."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f031",
+    "query": "What supply-chain risks does Apple identify in its 2024 Form 10-K?",
+    "ideal_context": [
+      "Apple identifies supply-chain risks including dependence on outsourcing partners, manufacturing concentration among a small number of partners and locations, reliance on single- or limited-source suppliers for certain components, component shortages and price fluctuations. Potential disruptions include natural disasters, geopolitical tensions, trade restrictions, labor issues, public-health events and IT failures."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f032",
+    "query": "What cybersecurity and data-security risks does Apple disclose?",
+    "ideal_context": [
+      "Apple warns that system failures, network disruptions, ransomware and other malicious attacks, unauthorized access to confidential or personal information, and ineffective security or recovery measures could disrupt operations and harm its business, reputation, operating results and financial condition."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f033",
+    "query": "What competition-related risks does Apple identify?",
+    "ideal_context": [
+      "Apple identifies intense global competition, aggressive price competition and pressure on gross margins, rapid technological change, short product life cycles, competitors offering lower-priced products or having larger installed bases, and uncertainty about whether investments in innovation will generate expected returns."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f034",
+    "query": "What legal and regulatory risks does Apple discuss in its 2024 annual report?",
+    "ideal_context": [
+      "Apple identifies risks arising from litigation and government investigations, antitrust matters, changing global laws and regulations, privacy and data-security rules, digital-platform regulation, and machine-learning and artificial-intelligence regulation. These matters could increase costs, lead to fines or required business changes, and adversely affect Apple's operations and financial condition."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f035",
+    "query": "What are Apple's five reportable geographic segments?",
+    "ideal_context": [
+      "Apple's five reportable geographic segments are the Americas, Europe, Greater China, Japan, and Rest of Asia Pacific."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f036",
+    "query": "What percentage of Apple's 2024 net sales came through direct and indirect distribution channels?",
+    "ideal_context": [
+      "In fiscal 2024, direct distribution channels accounted for 38% of Apple's net sales, while indirect distribution channels accounted for 62%."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f037",
+    "query": "How many full-time equivalent employees did Apple report as of September 28, 2024?",
+    "ideal_context": [
+      "Apple reported approximately 164,000 full-time equivalent employees as of September 28, 2024."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  },
+  {
+    "id": "f038",
+    "query": "What was the principal reason Apple's Services net sales increased in fiscal 2024?",
+    "ideal_context": [
+      "Apple stated that Services net sales increased primarily because of higher net sales from advertising, the App Store and cloud services."
+    ],
+    "source_sessions": ["Apple 2024 Annual Report"]
+  }
+]

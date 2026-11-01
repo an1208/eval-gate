@@ -1,0 +1,18 @@
+{
+  "retriever": {
+    "Contextual Recall": 1.0,
+    "Contextual Precision": 0.8167
+  },
+  "generator": {
+    "Faithfulness": 1.0,
+    "Answer Relevancy": 1.0,
+    "Citation Accuracy": 0.7
+  },
+  "pipeline": {
+    "Contextual Relevancy": 0.3074,
+    "Faithfulness": 1.0,
+    "Answer Relevancy": 1.0,
+    "RAG Triad (mean)": 0.7691,
+    "Citation Accuracy": 0.8
+  }
+}

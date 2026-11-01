@@ -1,0 +1,22 @@
+{
+  "max_drop": 0.05,
+  "max_error_rate": 0.2,
+  "thresholds": {
+    "retriever": {
+      "Contextual Recall": 0.7,
+      "Contextual Precision": 0.5
+    },
+    "generator": {
+      "Faithfulness": 0.85,
+      "Answer Relevancy": 0.8,
+      "Citation Accuracy": 0.9
+    },
+    "pipeline": {
+      "Contextual Relevancy": 0.2,
+      "Faithfulness": 0.85,
+      "Answer Relevancy": 0.8,
+      "RAG Triad (mean)": 0.65,
+      "Citation Accuracy": 0.9
+    }
+  }
+}
