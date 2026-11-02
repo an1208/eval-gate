@@ -17,7 +17,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableLambda
 from langchain_groq import ChatGroq
 
-from src.config import LLM_MODEL
+from src.config import GROQ_MAX_RETRIES, LLM_MODEL
 
 REFUSAL = "I don't know based on the provided document."
 
@@ -36,13 +36,23 @@ Answer:"""
 )
 
 
-# Models sometimes cite as 【p. 12】 or [p.12]; rewrite every variant to exactly [p. 12]
-# so anything that parses citations downstream (and the evals) sees one format.
-_CITATION_VARIANT = re.compile(r"[\[【〔]\s*p(?:ages?)?\.?\s*([\d,\s\-–]+?)\s*[\]】〕]", re.IGNORECASE)
+# Models sometimes cite with full-width brackets, [p.12] or [ p. 32, p. 26 ]; rewrite every variant to
+# exactly [p. 12] / [p. 32, 26] so anything that parses citations downstream (and the
+# evals) sees one format. Brackets holding anything other than page numbers are left alone.
+_CITATION_BRACKET = re.compile(r"[\[\u3010\u3014]\s*(p(?:ages?|p)?\b[^\]\u3011\u3015\[]*)[\]\u3011\u3015]", re.IGNORECASE)
 
 
 def normalize_citations(text: str) -> str:
-    return _CITATION_VARIANT.sub(lambda m: "[p. " + re.sub(r"\s*,\s*", ", ", m.group(1).strip()) + "]", text)
+    def fix(match):
+        body = match.group(1)
+        if re.search(r"[A-Za-z]", re.sub(r"\b(?:pages?|pp?)\b", "", body, flags=re.IGNORECASE)):
+            return match.group(0)  # contains other words, so it isn't a page citation
+        pages = re.findall(r"\d+(?:\s*[-\u2013]\s*\d+)?", body)
+        if not pages:
+            return match.group(0)
+        return "[p. " + ", ".join(re.sub(r"\s+", "", page) for page in pages) + "]"
+
+    return _CITATION_BRACKET.sub(fix, text)
 
 
 def format_docs(docs):
@@ -55,7 +65,7 @@ def get_generator_chain():
     """Step 4 - prompt -> LLM -> plain text -> tidy citations. Expects {"context": ..., "question": ...}."""
     return (
         PROMPT
-        | ChatGroq(model=LLM_MODEL, temperature=0, max_retries=6)
+        | ChatGroq(model=LLM_MODEL, temperature=0, max_retries=GROQ_MAX_RETRIES)
         | StrOutputParser()
         | RunnableLambda(normalize_citations)
     )

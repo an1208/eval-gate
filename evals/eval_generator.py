@@ -31,6 +31,7 @@ from evals.harness import (
     find_file,
     get_judge,
     load_goldens,
+    print_citation_problems,
     print_summary,
     strip_citations,
     summarize_by_metric,
@@ -39,7 +40,11 @@ from src.config import LLM_MODEL
 from src.generator import generate
 
 
+CITATION_PROBLEMS = []  # filled by run(), printed after the summary
+
+
 def run(generate_fn=generate):
+    CITATION_PROBLEMS.clear()
     # 1. LOAD the golden set --- queries with the ideal context passages
     goldens = load_goldens(CONTEXT_SET_NAMES, "ideal_context")
 
@@ -50,7 +55,10 @@ def run(generate_fn=generate):
         docs = [Document(page_content=text, metadata={"page": i}) for i, text in enumerate(g["ideal_context"])]
         answer = generate_fn(g["query"], docs)
 
-        citation_rows.append(citation_stats(answer, valid_pages=set(range(1, len(docs) + 1))))
+        valid = set(range(1, len(docs) + 1))
+        stats = citation_stats(answer, valid_pages=valid)
+        citation_rows.append(stats)
+        CITATION_PROBLEMS.append((g["id"], answer, stats[0], stats[1], valid))
         test_cases.append(
             LLMTestCase(
                 input=g["query"],
@@ -91,3 +99,4 @@ def run_local():
 
 if __name__ == "__main__":
     print_summary("generator", run_local())
+    print_citation_problems(CITATION_PROBLEMS)

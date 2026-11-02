@@ -80,7 +80,15 @@ def test_gate_tolerates_a_few_judge_errors():
 def test_normalize_citations_rewrites_variants():
     from src.generator import normalize_citations
 
-    assert normalize_citations("Sales were $391,035 million【p. 32】.") == "Sales were $391,035 million[p. 32]."
-    assert normalize_citations("X [p.32] and Y【p. 12,14】") == "X [p. 32] and Y[p. 12, 14]"
+    assert normalize_citations("Sales were $391,035 million\u3010p. 32\u3011.") == "Sales were $391,035 million[p. 32]."
+    assert normalize_citations("X [p.32] and Y\u3010p. 12,14\u3011") == "X [p. 32] and Y[p. 12, 14]"
     assert normalize_citations("Already fine [p. 5].") == "Already fine [p. 5]."
     assert normalize_citations("No citations here (p is a variable).") == "No citations here (p is a variable)."
+
+
+def test_normalize_citations_handles_repeated_p_and_spaces():
+    from src.generator import normalize_citations
+
+    assert normalize_citations("X were $391,035 million [ p. 32, p. 26 ].") == "X were $391,035 million [p. 32, 26]."
+    assert normalize_citations("See [pages 3-4] and [pp. 7, 9]") == "See [p. 3-4] and [p. 7, 9]"
+    assert normalize_citations("array[p] and [pricing] and [p. note 5]") == "array[p] and [pricing] and [p. note 5]"

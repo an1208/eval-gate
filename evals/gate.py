@@ -82,10 +82,10 @@ def write_github_summary(rows, passed):
     lines = [f"## EvalGate: {'PASSED' if passed else 'FAILED'}", "",
              "| Suite | Metric | Score | Min | Baseline | Status |", "|---|---|---|---|---|---|"]
     for r in rows:
-        icon = "✅" if r["status"] == "PASS" else "❌"
+        icon = "\u2705" if r["status"] == "PASS" else "\u274c"
         note = f" ({r['note']})" if r["note"] else ""
         lines.append(f"| {r['suite']} | {r['metric']} | {fmt(r['score']).strip()} | {fmt(r['minimum']).strip()} | {fmt(r['baseline']).strip()} | {icon} {r['status']}{note} |")
-    with open(path, "a") as f:
+    with open(path, "a", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
 
 
@@ -124,6 +124,16 @@ def main():
     if not baseline:
         print("Note: no baseline.json yet, so only the absolute minimums are checked. "
               "Run with --update-baseline after a good run.")
+
+    print("Results used (each suite's most recent run; they should be from the same code version and sample size):")
+    sizes = {}
+    for suite, res in results.items():
+        ns = {m.get("n") for m in ((res or {}).get("summary") or {}).values() if m.get("n")}
+        sizes[suite] = max(ns) if ns else None
+        print(f"  {suite:<10} {(res or {}).get('run_at', 'MISSING'):<20} questions={sizes[suite] or '?'}")
+    if len({n for n in sizes.values() if n}) > 1:
+        print("  WARNING: suites were run on different numbers of questions, so their scores and the "
+              "baseline are not comparable. Rerun them with the same number (e.g. python -m evals.eval_pipeline 10).")
 
     rows = check(thresholds, results, baseline, max_drop, max_error_rate)
     print_table(rows)

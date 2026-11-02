@@ -30,6 +30,7 @@ from evals.harness import (
     get_judge,
     load_goldens,
     per_case_means,
+    print_citation_problems,
     print_summary,
     strip_citations,
     summarize_by_metric,
@@ -40,7 +41,11 @@ from src.pipeline import ask
 EXTRA_ROWS = {"Citation Accuracy", "Cited Rate", "RAG Triad (mean)"}
 
 
+CITATION_PROBLEMS = []  # filled by run(), printed after the summary
+
+
 def run(ask_fn=ask):
+    CITATION_PROBLEMS.clear()
     # 1. LOAD the golden set --- the queries (ideal_answer is kept for the correctness eval later)
     goldens = load_goldens(ANSWER_SET_NAMES, "ideal_answer")
 
@@ -49,7 +54,10 @@ def run(ask_fn=ask):
     for g in goldens:
         out = ask_fn(g["query"])
 
-        citation_rows.append(citation_stats(out["answer"], valid_pages=set(out["pages"])))
+        valid = set(out["pages"])
+        stats = citation_stats(out["answer"], valid_pages=valid)
+        citation_rows.append(stats)
+        CITATION_PROBLEMS.append((g["id"], out["answer"], stats[0], stats[1], valid))
         test_cases.append(
             LLMTestCase(
                 input=g["query"],
@@ -108,6 +116,7 @@ def run_local():
 if __name__ == "__main__":
     summary = run_local()
     print_summary("pipeline", summary)
+    print_citation_problems(CITATION_PROBLEMS)
 
     links = {k: v["mean"] for k, v in summary.items() if k not in EXTRA_ROWS and v["mean"] is not None}
     if links:

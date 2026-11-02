@@ -173,7 +173,7 @@ except ImportError:
 # ---------------------------------------------------------------------
 # Citations - answers cite pages like [p. 12] or [p. 12, 14]
 # ---------------------------------------------------------------------
-CITATION_RE = re.compile(r"\[p\.?\s*[\d,\s\-–]+\]", re.IGNORECASE)
+CITATION_RE = re.compile(r"\[p\.?\s*[\d,\s\-\u2013]+\]", re.IGNORECASE)
 
 
 def strip_citations(answer: str) -> str:
@@ -208,6 +208,20 @@ def citation_summary(stats):
             "errors": 0,
         },
     }
+
+
+def print_citation_problems(items):
+    """items: [(question id, answer, accuracy, n_cited, valid_pages)]; shows what to fix."""
+    bad = [i for i in items if i[3] == 0 or i[2] < 1.0]
+    if not bad:
+        return
+    print(f"\nCitation problems ({len(bad)} of {len(items)} answers):")
+    for qid, answer, accuracy, n_cited, valid in bad:
+        if n_cited == 0:
+            kind = "no [p. N] citation found"
+        else:
+            kind = f"{accuracy:.0%} of {n_cited} cited pages were in the context (valid pages: {sorted(valid)})"
+        print(f"  {qid}: {kind}\n      answer ends: ...{answer.strip()[-170:]!r}")
 
 
 # ---------------------------------------------------------------------
