@@ -6,13 +6,13 @@
   "generator": {
     "Faithfulness": 1.0,
     "Answer Relevancy": 1.0,
-    "Citation Accuracy": 0.7
+    "Citation Accuracy": 1.0
   },
   "pipeline": {
-    "Contextual Relevancy": 0.3074,
+    "Contextual Relevancy": 0.2755,
     "Faithfulness": 1.0,
     "Answer Relevancy": 1.0,
-    "RAG Triad (mean)": 0.7691,
-    "Citation Accuracy": 0.8
+    "RAG Triad (mean)": 0.7585,
+    "Citation Accuracy": 0.9
   }
 }
